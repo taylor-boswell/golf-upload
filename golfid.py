@@ -1,6 +1,7 @@
 import os
 import base64
 import golfball
+import secrets
 from openai import OpenAI
 from dotenv import load_dotenv
 import fs
@@ -9,7 +10,7 @@ import shutil
 # Load environment variables
 load_dotenv()
 #XAI_API_KEY = os.getenv("XAI_API_KEY")
-XAI_API_KEY = 'xai-JTkTX3xkZVBaDHhWyOvOg48X2BDoGsskrQU9sRgANT4qsbbiOMYvTd9dfNvHAIVn1aJKX5Opdbu4or0O'
+
 
 # Function to encode image to base64
 def encode_image(filepath):
@@ -23,11 +24,11 @@ def encode_image(filepath):
         print(f"Error encoding image {filepath}: {str(e)}")
         return None
 
-#print("XAI_API_KEY = ", XAI_API_KEY)
+#print("XAI_API_KEY = ", secrets.XAI_API_KEY)
 
 # Initialize the OpenAI client with xAI's API endpoint
 client = OpenAI(
-    api_key=XAI_API_KEY,
+    api_key=secrets.XAI_API_KEY,
     base_url="https://api.x.ai/v1",
 )
 
