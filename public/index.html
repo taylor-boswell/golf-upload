@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai Golfball Image detection by Brand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <header class="bg-gray-800 p-4 shadow-lg">
+        <h1 class="text-3xl font-bold text-center">Golfball Photo Uploader</h1>
+    </header>
+    <main class="flex-1 flex flex-col items-center justify-center p-6">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-xl max-w-md w-full">
+            <form action="/upload" method="POST" enctype="multipart/form-data" class="space-y-4">
+                <div>
+                    <label for="image" class="block text-sm font-medium">Upload a Golfball Photo</label>
+                    <input type="file" name="image" id="image" accept="image/*" required
+                           class="mt-1 block w-full text-gray-300 bg-gray-700 border border-gray-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition duration-200">
+                    Upload Image
+                </button>
+            </form>
+            <div class="mt-6 text-center">
+                <a href="/images" class="text-blue-400 hover:text-blue-300 transition duration-200">View Gallery</a>
+            </div>
+            <div class="mt-4">
+                <button id="runPython"
+                        class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md transition duration-200">
+                    Run Analysis
+                </button>
+            </div>
+        </div>
+        <div id="pythonOutput" class="mt-6 text-center text-gray-300 hidden">
+            <h2 class="text-xl font-semibold">Analysis Result</h2>
+            <p id="outputText"></p>
+        </div>
+    </main>
+    <footer class="bg-gray-800 p-4 text-center">
+        <p>&copy; 2025 Golfball Photo Uploader. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('runPython').addEventListener('click', async () => {
+            const outputDiv = document.getElementById('pythonOutput');
+            const outputText = document.getElementById('outputText');
+            outputDiv.classList.remove('hidden');
+            outputText.textContent = 'Running analysis...';
+            try {
+                const response = await fetch('/run-python');
+                const result = await response.json();
+                if (result.success) {
+                    outputText.textContent = result.output;
+                } else {
+                    outputText.textContent = 'Error: ' + result.error;
+                }
+            } catch (error) {
+                outputText.textContent = 'Error: Failed to run analysis';
+            }
+        });
+    </script>
+</body>
+</html>
