@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col">
     <header class="bg-gray-800 p-4 shadow-lg">
-        <h1 class="text-3xl font-bold text-center">Golfball Photo Uploader</h1>
+        <h1 class="text-3xl font-bold text-center">Ai Golfball Photo scan</h1>
     </header>
     <main class="flex-1 flex flex-col items-center justify-center p-6">
         <div class="bg-gray-800 p-8 rounded-lg shadow-xl max-w-md w-full">
@@ -42,23 +42,29 @@
         <p>&copy; 2025 Golfball Photo Uploader. All rights reserved.</p>
     </footer>
     <script>
-        document.getElementById('runPython').addEventListener('click', async () => {
-            const outputDiv = document.getElementById('pythonOutput');
-            const outputText = document.getElementById('outputText');
-            outputDiv.classList.remove('hidden');
-            outputText.textContent = 'Running analysis...';
-            try {
-                const response = await fetch('/run-python');
-                const result = await response.json();
+    document.getElementById('runPython').addEventListener('click', () => {
+        const outputDiv = document.getElementById('pythonOutput');
+        const outputText = document.getElementById('outputText');
+        outputDiv.classList.remove('hidden');
+        outputText.textContent = 'Running analysis...';
+        fetch('/run-python')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(result => {
                 if (result.success) {
                     outputText.textContent = result.output;
                 } else {
                     outputText.textContent = 'Error: ' + result.error;
                 }
-            } catch (error) {
-                outputText.textContent = 'Error: Failed to run analysis';
-            }
-        });
+            })
+            .catch(error => {
+                outputText.textContent = 'Error: Failed to run analysis: ' + error.message;
+            });
+    });
     </script>
 </body>
 </html>
