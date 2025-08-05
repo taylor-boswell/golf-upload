@@ -9,7 +9,19 @@ const port = 8080;
 
 // Create uploads directory and subdirectories if they don't exist
 const uploadsDir = path.join(__dirname, 'uploads');
-const subDirs = ['callaway', 'taylormade', 'titleist'];
+const subDirs = [   'bridgestone'   , 
+                    'callaway'      , 
+                    'mizuno'        , 
+                    'nitro'         , 
+                    'pinnacle'      ,
+                    'srixon'        ,
+                    'taylormade'    , 
+                    'titleist'      , 
+                    'top-flite'      ,
+                    'wilson'        , 
+                    'vice'          , 
+                    'volvik'
+                ];
 
 async function setupDirectories() {
   try {
@@ -60,13 +72,13 @@ const htmlHeader = `
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golfball Photo Upload</title>
+    <title>Golfball Golf Ai Image Upload</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-900 text-white min-h-screen flex flex-col">
     <nav class="bg-gray-800 p-4 shadow-lg">
       <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">Golfball Photo App</h1>
+        <h1 class="text-2xl font-bold">Ai Golfball Photo Classification</h1>
         <div class="space-x-4">
           <a href="/" class="text-blue-400 hover:text-blue-300">Home</a>
           <a href="/images" class="text-blue-400 hover:text-blue-300">Gallery</a>
