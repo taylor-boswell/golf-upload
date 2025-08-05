@@ -3,13 +3,26 @@
 #Here's a Python script to check if a string contains popular golf ball brands:
 #python
 def check_golf_ball_brand(text):
-    # List of popular golf ball brands
+    # List of popular golf ball brand
     golf_brands = [
-        'Titleist', 'Callaway', 'Bridgestone', 'TaylorMade', 'Srixon',
-        'Wilson', 'Mizuno', 'Vice', 'Volvik', 'Nitro', 'Pinnacle', 'Top Flite'
+        'bridgestone'   , 
+        'callaway'      , 
+        'mizuno'        , 
+        'nitro'         , 
+        'pinnacle'      ,
+        'srixon'        ,
+        'taylormade'    , 
+        'titleist'      , 
+        'top flite'      ,
+        'wilson'        , 
+        'vice'          , 
+        'volvik'
     ]
     #print ("Got it:", text)
     # Convert text to lowercase for case-insensitive matching
+    if "".__eq__(text):
+        return 0
+    
     text = text.lower()
     
     # Check for each brand in the text
