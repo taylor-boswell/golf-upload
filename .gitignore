@@ -4,9 +4,12 @@ xsecrets.py
 node_modules/** */
 **/launch.json
 .vscode/launch.json
-**/lib64/
+**/__pycache__/**
+/__pycache__/**
+
 uploads/**
 .ai/**
 __pycache__/golfball.cpython-39.pyc
 .gitignore
 __pycache__/xsecrets.cpython-39.pyc
+__pycache__/golfball.cpython-39.pyc
