@@ -1,0 +1,4 @@
+git config --global user.name "taylor-boswell"
+git config --global user.email "taylor.boswell@bwdesigngroup.com"
+
+git commit --author="taylor-boswell <taylor.boswell@bwdesigngroup.com>"
