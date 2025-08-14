@@ -18,9 +18,10 @@ const subDirs = [   'bridgestone'   ,
                     'taylormade'    , 
                     'titleist'      , 
                     'top-flite'      ,
-                    'wilson'        , 
                     'vice'          , 
-                    'volvik'
+                    'volvik'        ,
+                    'wilson'         ,
+                    '_resized'         
                 ];
 
 async function setupDirectories() {
@@ -151,7 +152,8 @@ app.get('/images', async (req, res) => {
       for (const file of rootImages) {
         html += `
           <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-            <img src="/uploads/${file.name}" alt="Golfball photo" class="w-full h-48 object-cover">
+            <img src="/uploads/${file.name}" alt="${file.name}" class="w-full h-48 object-cover">
+            <figcaption>"${file.name}"</figcaption>
           </div>
         `;
       }
@@ -174,6 +176,7 @@ app.get('/images', async (req, res) => {
           html += `
             <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
               <img src="/uploads/${subDir}/${file.name}" alt="${subDir} photo" class="w-full h-48 object-cover">
+              <figcaption>"${file.name}"</figcaption>
             </div>
           `;
         }

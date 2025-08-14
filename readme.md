@@ -1,0 +1,1 @@
+Resize images to 224x224 pixels (common for CNNs).

@@ -1,2 +1,4 @@
-[{"Start time: 1754430543.6793704"},{"name": "Starting to process"},
-{"name": "OpenAI client initialized successfully"},{"name": "Encoding image: uploads/1754285945161.jpg"}{"api_result": "API response received for uploads/1754285945161.jpg: "},{"Balls per second 0.074747 b/s : Seconds per ball  13.378431 s/b"}]
+{
+    "success": true,
+    "output": "[{\"Start time: 1754442343.7309887\"},{\"name\": \"Starting to process\"},\n{\"name\": \"OpenAI client initialized successfully\"},{\"name\": \"Encoding image: uploads/1754419231809.jpg\"}{\"name\": \"Identified brand: callaway\"},\n{\"Balls per second 0.241631 b/s : Seconds per ball  4.138548 s/b\"}]"
+}

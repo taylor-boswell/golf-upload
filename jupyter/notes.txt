@@ -1,0 +1,105 @@
+
+/usr/local/cuda/extras/demo_suite/deviceQuery
+nvidia-smi
+source activate tensorflow_p36
+jupyter notebook --generate-config
+pip install notebook
+jupyter notebook
+which jupyter
+python -m pip list
+python3 -m pip list
+python -m jupyter --version
+python3 -m jupyter --version
+~/.local/bin/jupyter
+cat ./bashr
+cat ./bashrc
+cat .bashrc
+nano .bashrc
+. .bashrc
+~/.local/bin/jupyter
+jupyter
+jupyter notebook
+exit
+jupyter server list
+source /opt/tensorflow/bin/activate
+nano test_train_mnist.py
+python3 test_train_mnist.py
+ls
+python3 -m venv venv
+sudo python3 -m venv venv
+sudo apt install python3.10-venv
+sudo python3 -m venv venv
+source venv/bin/activate
+cd /opt/tensorflow/bin
+python3 -c "import tensorflow as tf; print(tf.__version__)"
+source activate tensorflow2_p310
+deactivate
+source activate tensorflow2_p310
+ls -la
+pip install --upgrade pip
+pip install tensorflow[and-cuda]
+python3 -c "import tensorflow as tf; print(tf.__version__)"
+mkdir code
+cd code
+git clone https://github.com/tensorflow/tfjs-examples.git
+cd tfjs-examples/
+ls -la
+cd getting-started/
+ls -la
+yarn install
+sudo apt install cmdtest
+npm install --global yarn
+sudo apt install npm
+sudo apt update
+sudo apt install nodejs npm
+npm install --global yarn
+sudo npm install --global yarn
+yarn install
+yarn watch
+jupyter server list
+jupyter notebook
+yarn watch
+jupyter server list
+exit
+jupyter notebook
+jupyter server list
+jupyter notebook stop 8888
+jupyter notebook
+pip install matplotlib
+exit
+nvcc --version
+history
+jupyter notebook
+jupyter notebook
+pwd
+history
+
+ec2-44-244-53-152.us-west-2.compute.amazonaws.com
+
+ssh -i ~/.ssh/tvb.pem -L 8888:localhost:8888 ubuntu@ec2-44-244-53-152.us-west-2.compute.amazonaws.com
+
+ssh -NfL 9999:localhost:8888 ubuntu@ec2-44-244-53-152.us-west-2.compute.amazonaws.com
+
+ssh  -i ~/.ssh/tvb.pem -NfL 9999:localhost:8888 ubuntu@ec2-44-244-53-152.us-west-2.compute.ama
+zonaws.com
+
+ssh -i ~/.ssh/tvb.pem -NfL 8888:localhost:8888 ubuntu@ec2-34-223-5-189.us-west-2.compute.amazonaws.com
+
+http://localhost:8888/tree
+
+ssh -i "tvb.pem" ec2-user@ec2-44-244-53-152.us-west-2.compute.amazonaws.com
+scp -i ~/.ssh/tvb.pem ec2-user@ec2-44-244-53-152.us-west-2.compute.amazonaws.com:/home/ec2-user/golf-upload/uploads .
+scp -i ~/.ssh/tvb.pem -r * ubuntu@ec2-34-223-5-189.us-west-2.compute.amazonaws.com:/home/ubuntu/data/
+
+jupyter server list
+
+
+scp -i ~/.ssh/tvb.pem -r ubuntu@ec2-34-223-5-189.us-west-2.compute.amazonaws.com:/home/ubuntu/data/*.jpg .
+scp -i ~/.ssh/tvb.pem -r ubuntu@ec2-34-223-5-189.us-west-2.compute.amazonaws.com:/home/ubuntu/data/*.jpeg .
+
+scp -i ~/.ssh/tvb.pem *.jpeg ec2-user@ec2-44-244-53-152.us-west-2.compute.amazonaws.com:/home/ec2-user/golf-upload/uploads 
+ssh -i ~/.ssh/tvb.pem ec2-user@ec2-44-244-53-152.us-west-2.compute.amazonaws.com
+scp -ii ~/.ssh/tvb.pem *.jpeg ec2-user@ec2-44-244-53-152.us-west-2.compute.amazonaws.com:/home/ec2-user/golf-upload/uploads/_resized
+/home/ec2-user/golf-upload/uploads/_resized
+
+

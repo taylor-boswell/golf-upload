@@ -12,10 +12,10 @@ import time
 
 start_time = time.time()
 print("[{\"", end="")
-print(f"Start time: {start_time}", end="")
-print("\"},", end="")
-print("{\"name\": \"Starting to process", flush=True, end="")
-print("\"},")
+#print(f"Start time: {start_time}", end="")
+#print("\"},", end="")
+#print("{\"name\": \"Starting to process", flush=True, end="")
+#print("\"},")
 # Load environment variables
 
 load_dotenv()
@@ -43,9 +43,9 @@ else:
             api_key=XAI_API_KEY,
             base_url="https://api.x.ai/v1",
         )
-        print("{\"name\": \"", end="")
-        print("OpenAI client initialized successfully", flush=True, end="")
-        print("\"},", end="")
+        #print("{\"name\": \"", end="")
+       #print("OpenAI client initialized successfully", flush=True, end="")
+       # print("\"},", end="")
 
     except Exception as e:
         #rint(" skey=",stub)
@@ -58,9 +58,9 @@ else:
     def encode_image(filepath):
         try:
             with open(filepath, "rb") as image_file:
-                print("{\"name\": \"", end="")
-                print(f"Encoding image: {filepath}", flush=True, end="")
-                print("\"}", end="")
+                #print("{\"name\": \"", end="")
+                #print(f"Encoding image: {filepath}", flush=True, end="")
+                #print("\"}", end="")
                 return base64.b64encode(image_file.read()).decode("utf-8")
         except FileNotFoundError:
             print(f"Error: File {filepath} not found", file=sys.stderr, flush=True)
@@ -110,13 +110,17 @@ else:
            # print(f"API response received for {image_path}: {str_with_brand}", flush=True, end="")
            # print("\"},", end="")
 
+            print("{\"api_result\": \"", end="")
+            print(f"response {str_with_brand}", flush=True, end="")
+            print("\"},", end="")
+
             #str_with_brand = response.choices[0].message.content
             if "".__eq__(str_with_brand):
                 exit
             else:
                 golfballtype_space = golfball.check_golf_ball_brand(str_with_brand)
                 golfballtype = golfballtype_space.replace(" ", "-")
-                print("{\"name\": \"", end="")
+                print("{\"brand\": \"", end="")
                 print(f"Identified brand: {golfballtype}", flush=True , end="")
                 print("\"},")
                 destination_directory = os.path.join("uploads", golfballtype.lower())
@@ -152,7 +156,7 @@ else:
         num_of_secs=elapsed_time
         per = fileCount / num_of_secs
         print("{\"", end="")
-        print(f"Balls per second {per:.6f} b/s : ", end="")
-        print(f"Seconds per ball  {1/per:.6f} s/b\"", end="")
+        print(f"Balls per hour {3600*per:.2f} balls/hour : ", end="")
+        print(f"Seconds per ball  {1/per:.2f} secs/ball\"", end="")
         print("}]")
 sys.exit(0)
